@@ -25,18 +25,21 @@ const Navbar = () => {
           <a href="#">Shop</a>
         </li>
         <li className="navbar__item">
-          <a href="#">About</a>
+          <a href="#about">About</a>
         </li>
         <li className="navbar__item">
           <a href="#">Contact</a>
         </li>
+         <div className="social-icons">
+          <a href="#"><i className="fab fa-facebook-f"></i></a>
+          <a href="#"><i className="fab fa-twitter"></i></a>
+          <a href="#"><i className="fab fa-instagram"></i></a>
+        </div>
       </ul>
-       
+      
       <SearchIcon />
       <Cart cartItems={cartItems} cartItemCount={cartItemCount} />
-
-      
-
+     
     </nav>
   );
 };

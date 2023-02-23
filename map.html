@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+   <div className="about-map">
+        <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
+          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          <Marker position={position}>
+            <Popup>
+              <p>Our store is located here!</p>
+            </Popup>
+          </Marker>
+        </MapContainer>
+      </div>
+</body>
+
+</html>

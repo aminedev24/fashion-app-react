@@ -1,10 +1,16 @@
 import React from 'react';
-import { MapContainer, TileLayer, Popup,Marker } from "https://unpkg.com/leaflet@1.9.3/dist/leaflet.js";
 
+
+
+//import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
+
+import { Circle } from "leaflet/src/layer/vector/Circle";
+
+//import { AttributionControl, LayerGroup,Pane, ImageOverlay,FeatureGroup ,Polyline} from "leaflet";
 const About = () => {
   const position = [51.505, -0.09]; // replace with your store location coordinates
   return (
-    <div className="about-container">
+    <div id='about' className="about-container">
       <div className="about-text">
         <h2>About Our Store</h2>
         <p>
@@ -20,16 +26,8 @@ const About = () => {
           Monday-Saturday from 10am-8pm and Sunday from 12pm-6pm.
         </p>
       </div>
-      <div className="about-map">
-        <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
-          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-          <Marker position={position}>
-            <Popup>
-              <p>Our store is located here!</p>
-            </Popup>
-          </Marker>
-        </MapContainer>
-      </div>
+      
+   
     </div>
   );
 };

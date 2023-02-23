@@ -4,7 +4,7 @@ import Navbar from './navbar';
 import Banner from './banner';
 import FeaturedProducts from './featured';
 import { CartProvider } from './cartContext';
-//import About from './about';
+import About from './about';
 
 function Main() {
   const [notificationCount, setNotificationCount] = useState(0);
@@ -15,7 +15,7 @@ function Main() {
         <Navbar />
         <Banner />
         <FeaturedProducts category="button" />
-        
+        <About />
       </div>
     </CartProvider>
   );
