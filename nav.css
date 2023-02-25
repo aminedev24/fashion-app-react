@@ -345,6 +345,7 @@ body {
   display: flex;
   justify-content:center;
   align-items: center;
+  
 }
 
 .social-media-container a {
@@ -360,7 +361,7 @@ body {
   align-items: center;
   margin-left: auto;
   gap: 1rem;
-  
+  background-color: #000;
   
   
 }
@@ -369,8 +370,7 @@ body {
   color: #fff;
   font-size: 1.5rem;
   transition: color 0.2s ease-in-out;
-  border: 1px solid #fff;
-  border-radius: 50px;
+  
   
 }
 
@@ -389,7 +389,6 @@ body {
   grid-template-columns: 1fr 2fr;
   grid-template-areas: "image text";
   align-items: center;
-  
 }
 
 .banner h1 {
@@ -426,6 +425,21 @@ body {
   max-width: 100%;
   grid-area: image;
 }
+
+@media (max-width: 768px) {
+  .banner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "image"
+      "text";
+    text-align: center;
+  }
+
+  .banner h2 {
+    margin: 1em 0;
+  }
+}
+
 
 
 /* categories section */

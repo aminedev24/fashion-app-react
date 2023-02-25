@@ -13,6 +13,12 @@ const Navbar = () => {
   };
 
   return (
+    <div>
+      <div className="social-icons">
+        <a href="#"><i className="fab fa-facebook-f"></i></a>
+        <a href="#"><i className="fab fa-twitter"></i></a>
+        <a href="#"><i className="fab fa-instagram"></i></a>
+        </div>
     <nav className="navbar">
       <div className="navbar__brand">
         <a href="#">Sakura-Shop</a>
@@ -30,17 +36,14 @@ const Navbar = () => {
         <li className="navbar__item">
           <a href="#">Contact</a>
         </li>
-         <div className="social-icons">
-          <a href="#"><i className="fab fa-facebook-f"></i></a>
-          <a href="#"><i className="fab fa-twitter"></i></a>
-          <a href="#"><i className="fab fa-instagram"></i></a>
-        </div>
+
       </ul>
       
       <SearchIcon />
       <Cart cartItems={cartItems} cartItemCount={cartItemCount} />
      
     </nav>
+    </div>
   );
 };
 
