@@ -47,12 +47,12 @@ const FeaturedProducts = ()=> {
    }
     return (
         <button
-  className={`category-btn ${activeCategory === category || (category === "all" && !activeCategory) ? "active" : ""}`}
-  key={`${category}-${index}`}
-  onClick={() => handleCategoryClick(category)}
->
-  {category}
-</button>
+          className={`category-btn ${activeCategory === category || (category === "all" && !activeCategory) ? "active" : ""}`}
+          key={`${category}-${index}`}
+          onClick={() => handleCategoryClick(category)}
+        >
+          {category}
+        </button>
 
       );
         })}
@@ -67,19 +67,19 @@ const FeaturedProducts = ()=> {
            </div>
           </div>
       <div className={`products ${isAnimated ? "fade-In" : ""}`}>
- {currentItems.map((product) => (
-  <div className={`product
-        ${isAnimated ? "fade-In" : ""}`} key={product.id} >
-    <div className="product-image-container">
-     <img 
-     className={`product-image ${isHovered ? "zoom" : ""} ${category === 'underwear' ? 'underwear' : ''}`} 
-          alt={product.name} 
-          src={category === 'underwear' ? '/img/victoriaClose.jpg' : product.image} 
-          id={`${product.id}`}
-          onMouseEnter={category === 'underwear' ? handleImageAnimation : null}
-          onMouseLeave={category === 'underwear' ? handleBoxClose : null}
-        />
-    </div>
+      {currentItems.map((product) => (
+      <div className={`product
+            ${isAnimated ? "fade-In" : ""}`} key={product.id} >
+        <div className="product-image-container">
+        <img 
+        className={`product-image ${isHovered ? "zoom" : ""} ${category === 'underwear' ? 'underwear' : ''}`} 
+              alt={product.name} 
+              src={category === 'underwear' ? '/img/victoriaClose.jpg' : product.image} 
+              id={`${product.id}`}
+              onMouseEnter={category === 'underwear' ? handleImageAnimation : null}
+              onMouseLeave={category === 'underwear' ? handleBoxClose : null}
+            />
+        </div>
     <h3>{product.name}</h3>
     <p>{product.price}</p>
     <div className="product-action-container">

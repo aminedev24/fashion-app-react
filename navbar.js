@@ -39,8 +39,11 @@ const Navbar = () => {
 
       </ul>
       
-      <SearchIcon />
-      <Cart cartItems={cartItems} cartItemCount={cartItemCount} />
+      <div className="components">
+        <SearchIcon />
+        <Cart cartItems={cartItems} cartItemCount={cartItemCount} />
+      </div>
+     
      
     </nav>
     </div>

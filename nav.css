@@ -30,10 +30,10 @@ body {
 
 .navbar__brand {
   font-family: 'Helvetica Neue', sans-serif;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   color: #333;
-  padding: 20px;
+  padding: 10px;
 }
 
 .navbar__brand a {
@@ -60,7 +60,7 @@ body {
   margin: 0;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: 2em;
   padding: 1rem 0;
   max-height: 0;
@@ -136,7 +136,12 @@ body {
   }
 }
 
-
+.components {
+  display: flex;
+  align-items: center;
+  gap: 4em;
+}
+/* cart section */
 .cart-icon {
   position: relative;
   display: flex;
@@ -159,21 +164,6 @@ body {
   justify-content: center;
   font-size: 14px;
   font-weight: bold;
-}
-
-.notification-link {
-  color: #333;
-  text-decoration: none;
-}
-
-.notification-link:hover {
-  color: #222;
-}
-
-.notification-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0;
 }
 
 
@@ -236,11 +226,32 @@ body {
   text-decoration: underline;
 }
 
+
+
+/* search section */
 .search-container {
   display: flex;
   align-items: center;
-  position: relative;
+  width: 100%;
+  max-width: 960px; /* set the maximum width of the search container */
+  margin: 0 auto; /* center the search container horizontally */
 }
+
+/* adjust the width of the search input container at different screen sizes */
+@media screen and (min-width: 768px) {
+  .search-input-container.expanded {
+    max-width: 480px;
+    margin-left: calc((100% - 480px) / 2);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .search-input-container.expanded {
+    max-width: 768px;
+    margin-left: calc((100% - 768px) / 2);
+  }
+}
+
 
 .search-icon {
   display: flex;
@@ -269,27 +280,49 @@ body {
 .search-input-container.expanded {
   width: 100%;
   max-width: 30rem;
-  
   padding: 0.5rem;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 0.2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .search-input-container input {
-  width: 100%;
+  width: 83%;
   height: 100%;
-  border: none;
-  outline: none;
   font-size: 1rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  outline: none;
 }
+
+@media screen and (min-width: 768px) {
+  .search-container {
+   /* change width to auto for larger screens */
+    max-width: 40rem; /* set a max-width for larger screens */
+  }
+
+  .search-input-container {
+    top: 4rem; /* adjust top position for larger screens */
+  }
+}
+
 
 .search-results-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-top: 1rem;
+  height: 400px;
+  overflow: scroll;
+  margin: auto;
 }
 
 .search-results-container div {
@@ -297,15 +330,17 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 0.5rem;
-  padding: 1rem;
+  padding: .5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  height: fit-content;
 }
 
 .search-results-container div img {
   max-width: 100%;
-  height: auto;
+  height: 270px;
+  object-fit: contain;
 }
 
 .search-results-container div p:first-of-type {
@@ -319,7 +354,6 @@ body {
   font-size: 0.8rem;
 }
 
-
 @media screen and (max-width: 768px) {
   .search-container {
     flex: 1;
@@ -327,10 +361,23 @@ body {
 
   .search-input-container {
     position: fixed;
-    top: 4.5rem;
+    top: 6.3rem;
     z-index: 1000;
   }
 }
+
+.close-button {
+  position: absolute;
+  top: 6%;
+  right: 1rem;
+  transform: translateY(-50%);
+  border: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+  color: #843737;
+  cursor: pointer;
+}
+
 
 
 @media (max-width: 768px) {
@@ -346,12 +393,7 @@ body {
     display: block;
   }
 
-  .banner {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "image"
-      "text";
-  }
+ 
   .button {
     font-size: 12px;
     margin: 1em;
@@ -425,56 +467,45 @@ body {
   grid-template-areas: "image text";
   align-items: center;
 }
-
 .banner h1 {
   color: #333;
   font-size: 36px;
   margin: 0;
 }
-
 .banner h2 {
   color: #555;
   font-size: 24px;
-  margin: 0;
   grid-area: text;
   margin: 1em;
 }
-
 .button {
   display: inline-block;
-  background-color: #ffa500;
+  background-color: orange;
   color: #fff;
   font-size: 18px;
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
 }
-
 .button:hover {
   background-color: #ff9000;
 }
-
 .banner img {
   display: block;
   margin: 20px auto;
   max-width: 100%;
   grid-area: image;
 }
-
 @media (max-width: 768px) {
   .banner {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "image"
-      "text";
-    text-align: center;
+      grid-template-columns: 1fr;
+      grid-template-areas: "image" "text";
+      text-align: center;
   }
-
   .banner h2 {
-    margin: 1em 0;
+      margin: 1em 0;
   }
 }
-
 
 
 /* categories section */
