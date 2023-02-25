@@ -11,82 +11,69 @@
 </head>
 
 <body>
+<input type="text" placeholder="search" id="search">
+</body>
+
+<script>
+
+let searchBtn = document.getElementById('search')
+
+function generateUniqueId() {
+  const timestamp = new Date().getTime();
+  const random = Math.floor(Math.random() * 10000);
+  return `product${timestamp}${random}`;
+}
+  const products = {
+    button: [
+      {
+        id: generateUniqueId(),
+        name: "pyjama button",
+        image: 'img/button1.jpg',
+        price: 29.99
   
-<nav class="navbar">
-  <div class="navbar__brand">
-    <a href="#">Brand Name</a>
-  </div>
-  <div class="navbar__menu-toggle">
-    <input type="checkbox" />
-    <i class="fas fa-bars"></i>
-  </div>
-  <ul class="navbar__menu">
-    <li class="navbar__item">
-      <a href="#">Shop</a>
-    </li>
-    <li class="navbar__item">
-      <a href="#">About</a>
-    </li>
-    <li class="navbar__item">
-      <a href="#">Contact</a>
-    </li>
-  </ul>
-      <div class="bell-icon">
-        <i class="fas fa-bell"></i>
-        <span class="notification-count">0</span>
-        <div class="notifications-dropdown">
-          <div class="notification">
-            <p>Notification 1</p>
-          </div>
-         
-          
-        </div>
-      </div>
-</nav>
+      },
+      // add more products as needed
+    ],
+    short: [
+      {
+        id: generateUniqueId(),
+        name: "pyjama short satin",
+        image: "img/satinShort2.jpg",
+        price: 12.99
+      },
+      // add more products as needed
+    ],
+    underwear: [
+      {
+        id: generateUniqueId(),
+        name: "Victoria",
+        image: "img/victoriaClose.jpg",
+        imageOpen: "img/victoriaOpen.jpg",
+        isOpen: false,
+        animationInterval: null,
+        price: 14.99
+      },
+      // add more products as needed
+    ]
+  };
 
+const handleSearch = (e) =>
+  {
+  const searchValue = e.target.value.toLowerCase();
+  const searchResults = Object.keys(products)
+    .map(category => products[category].filter(product => {
+      return product.name.toLowerCase().includes(searchValue);
+    }))
+    .reduce((acc, val) => acc.concat(val), []); // flatten the array of arrays
+  
+   //TODO: Do something with searchResults, e.g. display them in search results
 
+    console.log(searchResults);
 
+}
 
-
-<div class="post-system">
-  <form>
-    <div class="profile-and-username">
-      <img src="profile.jpg" class="profile-img">
-      <p class="username">JohnDoe123</p>
-    </div>
-    <label for="post-input">Post:</label>
-    <textarea id="post-input" class="post-input"></textarea>
-    <button type="submit" class="submit-button">Submit</button>
-  </form>
-</div>
-
-<div class="post-container">
-  <div class="post">
-    <div class="profile-and-username">
-      <img src="profile.jpg" class="profile-img">
-      <p class="username">JohnDoe123</p>
-    </div>
-    <p class="timestamp">Jan 1, 2021</p>
-    <p class="post-text">This is my post.</p>
-    <div class="post-buttons">
-      <button class="like-button">Like</button>
-      <button class="comment-button">Comment</button>
-      <button class="share-button">Share</button>
-    </div>
-    <div class="comments">
-      <div class="comment">
-        <p class="username">JaneDoe456</p>
-        <p class="comment-text">This is a comment.</p>
-      </div>
-      <div class="comment">
-        <p class="username">JohnSmith789</p>
-        <p class="comment-text">This is another comment.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
+searchBtn.addEventListener('change',handleSearch)
+</script>
 <script src="nav.js"></script>
 </body>
 
