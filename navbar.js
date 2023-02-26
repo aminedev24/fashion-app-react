@@ -1,17 +1,30 @@
 import React, { useState, useContext } from "react";
 import { CartContext } from "./cartContext";
-import SearchIcon from "./search";
-
-import Cart from "./cart";
+//import SearchIcon from "./search";
+import SearchIcon, { handleSearchClick } from "./search";
+import Cart, {handleCartToggle} from "./cart";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const { cartItems, cartItemCount } = useContext(CartContext);
-
+  
   const handleMenuToggle = () => {
     setShowMenu(!showMenu);
+  };handleCartToggle
+
+const handleClickOutside = (e) => {
+  
+    if (
+      !e.target.closest(".input-container.expanded") &&
+      !e.target.closest(".cart-dropdown") &&
+      !isExpanded
+    ) {
+      setShowCart(false);
+      setIsExpanded(false);
+    }
   };
 
+document.addEventListener("click", handleClickOutside);
   return (
     <div>
       <div className="social-icons">

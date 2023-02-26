@@ -94,7 +94,7 @@ body {
   .navbar__menu {
     flex-direction: column;
     position: absolute;
-    top: 3.5rem;
+    top: 4.5rem;
     left: 0;
     right: 0;
     visibility: hidden;
@@ -102,13 +102,14 @@ body {
     transition: max-height 0.2s ease-out;
     margin-bottom: 10px;
     display: block;
+    justify-content: flex-end !important;
   }
 
   .navbar__menu.active {
     max-height: 30vh;
     margin-bottom: 10px;
     visibility: visible;
-
+    z-index: 2000;
   }
 
   .navbar__item a {
@@ -119,7 +120,6 @@ body {
     display: block;
     position: absolute;
     right: 1rem;
-
   }
 
   .navbar__menu-toggle input {
@@ -135,6 +135,7 @@ body {
     border: solid 1px;
   }
 }
+
 
 .components {
   display: flex;
@@ -365,6 +366,9 @@ body {
     top: 6.3rem;
     z-index: 1000;
   }
+  .search-input-container input {
+    width: 60%;
+  }
 }
 
 .close-button {
@@ -377,6 +381,7 @@ body {
   font-size: 1.2rem;
   color: #843737;
   cursor: pointer;
+  font-weight: bold;
 }
 
 
@@ -413,6 +418,9 @@ body {
 .category-right-image{
   right: 20px !important;
  
+}
+.close-button {
+  right:2em;
 }
 
   
@@ -510,6 +518,51 @@ body {
   }
 }
 
+.services-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 50px;
+  max-width: 1200px;
+}
+
+.services-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 250px;
+}
+
+.services-box i {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.services-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.services-box p {
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .services-box {
+    width: calc(50% - 20px);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .services-box {
+    width: calc(33.33% - 20px);
+  }
+}
 
 /* categories section */
 .categories {
@@ -769,5 +822,28 @@ body {
 @media screen and (min-width: 768px) {
   .about-text {
     flex-basis: calc(50% - 1rem);
+  }
+}
+
+#mapid {
+  width: 100%;
+  height: 150px; /* Set a default height */
+}
+
+@media (min-width: 768px) {
+  #mapid {
+    height: 500px;
+  }
+}
+
+@media (min-width: 992px) {
+  #mapid {
+    height: 600px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #mapid {
+    height: 700px;
   }
 }

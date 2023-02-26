@@ -4,39 +4,42 @@ import products from "./productsObj";
 import { useContext } from 'react';
 import { CartContext } from "./cartContext";
 
+export const handleSearchClick = (setIsExpanded, isExpanded) => {
+  setIsExpanded(!isExpanded);
+};
+
 const SearchIcon = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
 
-  const handleSearchClick = () => {
-    setIsExpanded(!isExpanded);
-  };
+  
 
   const handleSearch = (e) => {
-    const searchValue = e.target.value.toLowerCase();
+  const searchValue = e.target.value.toLowerCase();
   
-    // Check if searchValue is empty before filtering
-    const results = searchValue.trim() === '' ? [] :
-      Object.keys(products)
-        .map(category =>
-          products[category].filter(product =>
-            product.name.toLowerCase().includes(searchValue)
-          )
+  // Check if searchValue is empty before filtering
+  const results = searchValue.trim() === '' ? [] :
+    Object.keys(products)
+      .map(category =>
+        products[category].filter(product =>
+          searchValue.split(' ').every(term => product.name.toLowerCase().includes(term))
         )
-        .reduce((acc, val) => acc.concat(val), []);
+      )
+      .reduce((acc, val) => acc.concat(val), []);
   
-    setSearchResults(results);
-  };
+  setSearchResults(results);
+};
+
   
   const { addItemToCart } = useContext(CartContext);
   return (
     <div className="search-container">
-      <button className="search-icon" onClick={handleSearchClick}>
+      <button className="search-icon" onClick={() => handleSearchClick(setIsExpanded, isExpanded)}>
         <i className="fa fa-search"></i>
       </button>
       <div className={`search-input-container ${isExpanded ? 'expanded' : ''}`}>
         <input type="text" placeholder="Search..." onChange={handleSearch} />
-        <button className="close-button">&times;</button>
+        <button className="close-button" onClick={() => handleSearchClick(setIsExpanded, isExpanded)}>&times;</button>
         <div className="search-results-container">
         {searchResults.length > 0 ? (
           searchResults.map((result) => (
@@ -56,5 +59,7 @@ const SearchIcon = () => {
     </div>
   );
 };
+
+
 
 export default SearchIcon;

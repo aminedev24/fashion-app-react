@@ -2,14 +2,15 @@ import React from 'react';
 
 
 
-//import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
+import Map from './map';
 
-import { Circle } from "leaflet/src/layer/vector/Circle";
+//import { Circle } from "leaflet/src/layer/vector/Circle";
 
 //import { AttributionControl, LayerGroup,Pane, ImageOverlay,FeatureGroup ,Polyline} from "leaflet";
 const About = () => {
   const position = [51.505, -0.09]; // replace with your store location coordinates
   return (
+    <div>
     <div id='about' className="about-container">
       <div className="about-text">
         <h2>About Our Store</h2>
@@ -27,8 +28,10 @@ const About = () => {
         </p>
       </div>
       
-   
-    </div>
+    
+   </div>
+  
+   </div>
   );
 };
 

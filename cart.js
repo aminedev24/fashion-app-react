@@ -1,13 +1,15 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "./cartContext";
 
+export const handleCartToggle = (setShowCart, showCart) => {
+  setShowCart(!showCart);
+};
+
 const Cart = () => {
   const [showCart, setShowCart] = useState(false);
   const { cartItems, removeItemFromCart, cartItemCount, cartTotal, updateCartTotal } = useContext(CartContext);
 
-  const handleCartToggle = () => {
-    setShowCart(!showCart);
-  };
+  
 
   const handleAddToCart = (item) => {
     updateCartTotal();
@@ -24,7 +26,7 @@ const Cart = () => {
 
   return (
     <div className="cart-icon">
-      <i className="fas fa-shopping-cart" onClick={handleCartToggle} />
+      <i className="fas fa-shopping-cart" onClick={() => handleCartToggle(setShowCart, showCart)}/>
       <span className='notification-count'>{cartItemCount}</span>
       <div className={`cart-dropdown ${showCart ? "block" : ""}`}>
         {cartItems && cartItems.length > 0 ? (
@@ -55,4 +57,5 @@ const Cart = () => {
   );
 };
 
+//export {handleCartToggle};
 export default Cart;

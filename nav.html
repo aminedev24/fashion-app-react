@@ -16,6 +16,16 @@
 
 <script>
 
+function generateUsername() {
+  const characters = 'abcdefghijklmnopqrstuvwxyz0123456789-';
+  let username = '';
+  for (let i = 0; i < 8; i++) {
+    username += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return username;
+}
+console.log(generateUsername())
+
 let searchBtn = document.getElementById('search')
 
 function generateUniqueId() {
