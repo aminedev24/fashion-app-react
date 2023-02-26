@@ -170,6 +170,7 @@ body {
 .cart-dropdown.block {
   display: block !important;
   z-index: 4;
+  z-index: 1000;
 }
 .cart-icon .cart-dropdown {
   display: none;
@@ -178,7 +179,7 @@ body {
   right: 0;
   background-color: white;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 999;
+  z-index: 1000;
  
 }
 
@@ -405,13 +406,13 @@ body {
   
   .category-left-image{
   left: .5rem !important;
-  top: 1rem !important;
+  
   
 }
 
 .category-right-image{
   right: 20px !important;
-  top: 7rem !important;
+ 
 }
 
   
@@ -466,6 +467,8 @@ body {
   grid-template-columns: 1fr 2fr;
   grid-template-areas: "image text";
   align-items: center;
+  position: relative;
+  z-index: 999;
 }
 .banner h1 {
   color: #333;
