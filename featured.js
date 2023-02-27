@@ -47,17 +47,20 @@ const FeaturedProducts = () => {
         <img src="img/category1.jpg" alt="Category1" className="category-left-image" />
         <img src="img/category2.jpg" alt="Category2" className="category-right-image" />
       </div>
-      <div className="category-tabs">
-        {categories.map((category, index) => (
-          <button
-            className={`category-tab ${activeTab === category ? "active" : ""}`}
-            key={`${category}-${index}`}
-            onClick={() => handleCategoryClick(category)}
-          >
-            {category}
-          </button>
-        ))}
+      <div className='category-tabs-container'>
+        <div className="category-tabs">
+          {categories.map((category, index) => (
+            <button
+              className={`category-tab ${activeTab === category ? "active" : ""}`}
+              key={`${category}-${index}`}
+              onClick={() => handleCategoryClick(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
       </div>
+    
     
       <div className="category-title">{category ? `${category} Products` : "All products"}</div>
       <div className="size-buttons">
