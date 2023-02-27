@@ -7,7 +7,7 @@ import { CartProvider } from './cartContext';
 import About from './about';
 import ServicesContainer from './services'
 function Main() {
-  const [notificationCount, setNotificationCount] = useState(0);
+
 
   return (
     <CartProvider>
