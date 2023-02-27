@@ -71,21 +71,21 @@ const FeaturedProducts = ()=> {
       <div className={`product
             ${isAnimated ? "fade-In" : ""}`} key={product.id} >
         <div className="product-image-container">
-<img 
-  className={`product-image ${isHovered ? "zoom" : ""} ${category === 'underwear' ? 'underwear' : ''}`} 
-  alt={product.name} 
-  src={product.image} 
-  id={`${product.id}`}
-  onMouseEnter={handleImageAnimation}
-  onMouseLeave={category === 'underwear' ? handleBoxClose : null}
-/>
+          <img 
+            className={`product-image ${isHovered ? "zoom" : ""} ${category === 'underwear' ? 'underwear' : ''}`} 
+            alt={product.name} 
+            src={product.image} 
+            id={`${product.id}`}
+            onMouseEnter={handleImageAnimation}
+            onMouseLeave={category === 'underwear' ? handleBoxClose : null}
+          />
 
         </div>
-    <h3>{product.name}</h3>
-    <p>{product.price}</p>
-    <div className="product-action-container">
-      <button className="product-action-button"onClick={() => addItemToCart(product)}>Add to cart</button>
-    </div>
+        <h3>{product.name}</h3>
+        <p>{product.price}</p>
+        <div className="product-action-container">
+          <button className="product-action-button"onClick={() => addItemToCart(product)}>Add to cart</button>
+        </div>
   </div>
 ))}
 

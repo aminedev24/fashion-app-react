@@ -1,5 +1,5 @@
 const CACHE_NAME = "my-pwa-cache-v1";
-const urlsToCache = ["/",,'//unpkg.com/systemjs@0.19.47/dist/system.js', "/index.html", "/app.js", "/nav.css"];
+const urlsToCache = ["/",,'https://unpkg.com/systemjs@0.19.47/dist/system.js', "/index.html", "/app.js", "/nav.css"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
