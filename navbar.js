@@ -16,40 +16,25 @@ const Navbar = () => {
     setShowMenu(!showMenu);
   };
 
-  const handleClickOutside = (e) => {
-    const searchIcon = document.querySelector('.search-icon');
-    const cartIcon = document.querySelector('.cart-icon');
-    const searchContainer = document.querySelector('.search-input-container')
-    const navMenu = document.querySelector('.navbar__menu')
-    const cartDropDown = document.querySelector('.cart-dropdown')
-    const navToggle = document.querySelector('.navbar__menu-toggle')
-    if (cartIcon.contains(e.target) && !showCart) {
-      console.log('cart is open');
-      searchContainer.classList.contains('expanded') && searchContainer.classList.remove('expanded')
-      navMenu.classList.contains('active') && navMenu.classList.remove('active');
-      setIsExpanded(false);
-      setShowMenu(false);
-    }else if (searchIcon.contains(e.target) && !isExpanded){
-      console.log('search is open');
-      setShowCart(false);
-      setShowMenu(false);
-      navMenu.classList.contains('active') && navMenu.classList.remove('active');
-      cartDropDown.classList.contains('block') && cartDropDown.classList.remove('block')
-    }else if(navToggle.contains(e.target) && !showMenu) {
-      console.log('menu is open');
-      cartDropDown.classList.contains('block') && cartDropDown.classList.remove('block')
-      searchContainer.classList.contains('expanded') && searchContainer.classList.remove('expanded')
-      setShowCart(false);
-      setIsExpanded(false);
-    }else {
-      cartDropDown.classList.contains('block') && cartDropDown.classList.remove('block')
-      searchContainer.classList.contains('expanded') && searchContainer.classList.remove('expanded')
-      navMenu.classList.contains('active') && navMenu.classList.remove('active');
-      setShowCart(false);
-      setIsExpanded(false);
-      setShowMenu(false);
-    }
-  };
+const handleClickOutside = (e) => {
+  const searchIcon = document.querySelector('.search-icon');
+  const cartIcon = document.querySelector('.cart-icon');
+  const searchContainer = document.querySelector('.search-input-container')
+  const navMenu = document.querySelector('.navbar__menu')
+  const cartDropDown = document.querySelector('.cart-dropdown')
+  const navToggle = document.querySelector('.navbar__menu-toggle')
+
+  if(!cartIcon.contains(e.target) && !searchIcon.contains(e.target) && !navToggle.contains(e.target)){
+    navMenu.classList.remove('active')
+    //searchContainer.classList.remove('expanded')
+    cartDropDown.classList.remove('block')
+    
+   console.log(isExpanded)
+    setIsExpanded(!isExpanded)
+  
+  }
+};
+
   
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);

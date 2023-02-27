@@ -71,14 +71,15 @@ const FeaturedProducts = ()=> {
       <div className={`product
             ${isAnimated ? "fade-In" : ""}`} key={product.id} >
         <div className="product-image-container">
-        <img 
-        className={`product-image ${isHovered ? "zoom" : ""} ${category === 'underwear' ? 'underwear' : ''}`} 
-              alt={product.name} 
-              src={category === 'underwear' ? '/img/victoriaClose.jpg' : product.image} 
-              id={`${product.id}`}
-              onMouseEnter={category === 'underwear' ? handleImageAnimation : null}
-              onMouseLeave={category === 'underwear' ? handleBoxClose : null}
-            />
+<img 
+  className={`product-image ${isHovered ? "zoom" : ""} ${category === 'underwear' ? 'underwear' : ''}`} 
+  alt={product.name} 
+  src={product.image} 
+  id={`${product.id}`}
+  onMouseEnter={handleImageAnimation}
+  onMouseLeave={category === 'underwear' ? handleBoxClose : null}
+/>
+
         </div>
     <h3>{product.name}</h3>
     <p>{product.price}</p>

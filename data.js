@@ -67,13 +67,24 @@ const useFeaturedProductsData = () => {
     }
     setIsAnimated(true);
   };
-  
-  const handleImageAnimation = (event) => {
-    event.target.src = "/img/victoriaOpen.jpg";
-  };
+const handleImageAnimation = (event) => {
+  const currentItem = currentItems.find((product) => product.id === event.target.id);
+
+  Object.keys(products).forEach((key) => {
+    if (key === category && key === "underwear" && currentItem) {
+      event.target.src = currentItem.imageOpen;
+    }
+  });
+};
+
+
+
 
   const handleBoxClose = (event) => {
-    event.target.src = '/img/victoriaClose.jpg'
+    {currentItems.map((product) => (
+      event.target.src = product.image
+      
+      ))};
   };
 
   return {

@@ -6,7 +6,6 @@ import FeaturedProducts from './featured';
 import { CartProvider } from './cartContext';
 import About from './about';
 import ServicesContainer from './services'
-
 function Main() {
   const [notificationCount, setNotificationCount] = useState(0);
 

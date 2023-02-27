@@ -35,7 +35,18 @@ const products = {
       price: 14.99
     },
     // add more products as needed
+    {
+      id: generateUniqueId(),
+      name: "Victoria 2",
+      image: "img/victoriaClose.jpg",
+      imageOpen: "img/victoriaOpen2.jpg",
+      isOpen: false,
+      animationInterval: null,
+      price: 14.99
+    }
   ]
 };
+
+
 
 export default products;
