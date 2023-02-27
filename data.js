@@ -13,11 +13,23 @@ const useFeaturedProductsData = () => {
   const endIndex = startIndex + itemsPerPage;
   const currentItems = selectedProducts.slice(startIndex, endIndex);
   const [isAnimated, setIsAnimated] = useState(false);
-  const categories = ['all', 'button', 'short', 'underwear'];
+  const categories = [];
+
   const sizes = ['M','L','Xl','XXL']
   const [activeCategory, setActiveCategory] = useState("");
   const [isHovered, setIsHovered] = useState(false);
 
+
+
+  const keys = new Set();
+for (const key in products) {
+  if (!keys.has(key)) {
+    //console.log(key, products[key]);
+    keys.add(key);
+    categories.push(key)
+  }
+}
+console.log(keys)
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
