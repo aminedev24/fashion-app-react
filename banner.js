@@ -1,5 +1,5 @@
 import React from "react";
-import ServicesContainer from './services'
+
 const Banner = () => {
   return (
     <div className="banner">
@@ -9,7 +9,7 @@ const Banner = () => {
         <h2>20% discount on all products</h2>
         <a href="#" className="button">Visit our page</a>
       </div>
-      <ServicesContainer />
+     
     </div>
   );
 };

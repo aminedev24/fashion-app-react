@@ -520,7 +520,7 @@ body {
 
 .services-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   margin: 0 auto;
   padding: 50px;
@@ -556,6 +556,10 @@ body {
   .services-box {
     width: calc(50% - 20px);
   }
+  .services-container {
+    gap: 5em;
+  }
+ 
 }
 
 @media screen and (min-width: 992px) {
