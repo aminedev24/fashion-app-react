@@ -73,20 +73,23 @@
     display: flex;
     overflow-x: auto;
     white-space: nowrap;
+    width: 25%;
+    margin: 0 auto;
+    overflow-x: auto;
   }
   
   .category-tabs {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
     padding: 1rem;
     border-bottom: 1px solid #ddd;
+    z-index: 2;
+
   }
   
   @media screen and (max-width: 768px) {
     .category-tabs {
-      flex-direction: column;
+     
       justify-content: center;
       align-items: flex-start;
     }
