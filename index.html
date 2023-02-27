@@ -6,28 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="nav.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-  integrity="sha384-OC/9XcRZL15btl04Yf3+3KxYC3r82dd2wk1NnSiLyR8GKjSHMbr5ZgPvxyHM+KB2"
-  crossorigin=""
-/>
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/react-leaflet@3.1.4/dist/react-leaflet.css"
-  integrity="sha384-EjKfSdMLQl+TNYfZ0zlLkrbOV27JG8TfDUS+QLJyyRAw0q3zEjJfhNlZQnN2G1dR"
-  crossorigin=""
-/>
-<!-- Make sure you put this AFTER Leaflet's CSS -->
- <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-     crossorigin=""></script>
+ 
+
      
   <title>Sakura-Shop</title>
   
   <!-- React -->
   <script src="//unpkg.com/systemjs@0.19.47/dist/system.js"></script>
-  
+  <link rel="manifest" href="/manifest.json">
+
 
   
 </head>
@@ -37,6 +24,17 @@
   <!-- Project -->
   <script src="config.js"></script>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  
+  <script src="serviceWorker.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/serviceWorker.js").then((registration) => {
+      console.log("ServiceWorker registration successful with scope: ", registration.scope);
+    }, (err) => {
+      console.log("ServiceWorker registration failed: ", err);
+    });
+  });
+}
+  </script>
 </body>
 </html>
