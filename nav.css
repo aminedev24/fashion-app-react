@@ -10,16 +10,14 @@ body {
 
 /* navbar section */
 .navbar {
-  position: relative;
-  background-color: lightgray;
-  height: 4.5rem;
+  background-color: #3498db; /* Use a modern color */
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.2rem;
+  padding: 0 20px; /* Adjust padding */
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
-
 
 .navbar__brand-container {
   position: fixed;
@@ -30,9 +28,9 @@ body {
 
 .navbar__brand {
   font-family: 'Helvetica Neue', sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
-  color: #333;
+  color: #fff;
   padding: 10px;
 }
 
@@ -54,6 +52,13 @@ body {
 .navbar__menu-toggle {
   display: none;
 }
+
+
+.navbar__item a:hover {
+  background-color: #3498db; /* Use a contrasting color for hover */
+  color: #fff;
+}
+
 
 .navbar__menu {
   list-style: none;
@@ -78,9 +83,9 @@ body {
 
 .navbar__item a {
   display: block;
-  padding: 1rem;
+  padding: 1rem 0.5rem;
   text-decoration: none;
-  color: black;
+  color: #333;
  
 }
 
@@ -98,7 +103,7 @@ body {
     left: 0;
     right: 0;
     visibility: hidden;
-    background-color: lightgray;
+    background-color: #3498db;
     transition: max-height 0.2s ease-out;
     margin-bottom: 10px;
     display: block;
@@ -127,12 +132,12 @@ body {
   }
 
   .navbar__menu-toggle i {
-    color: black;
-    font-size: 1.5rem;
+    color: #fff;
+    font-size: 1.8rem;
   }
 
   .navbar__item a {
-    border: solid 1px;
+    border: none;
   }
 }
 
